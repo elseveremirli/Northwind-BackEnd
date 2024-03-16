@@ -19,7 +19,7 @@ public class Category {
     @Column(name = "category_id")
     private int categoryId;
 
-    @Column(name = "categroy_name")
+    @Column(name = "category_name")
     private String categoryName;
 
     @OneToMany(mappedBy = "category")

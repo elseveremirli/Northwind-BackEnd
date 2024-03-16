@@ -8,6 +8,7 @@ import org.example.northwind.core.utilities.results.Result;
 import org.example.northwind.core.utilities.results.SuccessDataResult;
 import org.example.northwind.entities.concretes.Category;
 import org.example.northwind.entities.concretes.Product;
+import org.example.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -79,5 +80,10 @@ public class ProductsController {
 	@GetMapping("/getAllDesc")
 	public DataResult<List<Product>> getAllSorted(){
 		return new SuccessDataResult<List<Product>>(productService.getAllSorted());
+	}
+
+	@GetMapping("/etProductWithCategoryDetails")
+	public DataResult<List<ProductWithCategoryDto>> etProductWithCategoryDetails(){
+		return productService.getProductWithCategoryDetails();
 	}
 }
